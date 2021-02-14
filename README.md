@@ -7,7 +7,15 @@ This is the changed version of component: https://github.com/netguru/sticky-para
 This is the short version of `sticky-parallax-header` library. It's special for providing features of sticky header only.
 You can use that component as for a sticky part of your project and as not sticky
 
-Using the ContainerView like a wrapper:
+
+<div align="center" >
+ 
+I am using these tags and linking them to files in a folder in my repo
+![Tabbed Header Gif](./assets/componentPresentation.gif)
+</div>
+
+
+Use the ContainerView like a wrapper:
 
 ```js
     <ContainerView
