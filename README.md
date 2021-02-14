@@ -8,11 +8,8 @@ This is the short version of `sticky-parallax-header` library. It's special for 
 You can use that component as for a sticky part of your project and as not sticky
 
 
-<div align="center" >
- 
-I am using these tags and linking them to files in a folder in my repo
-![Tabbed Header Gif](./assets/componentPresentation.gif)
-</div>
+
+![Tabbed Header Gif](./assets/screen.gif)
 
 
 Use the ContainerView like a wrapper:
