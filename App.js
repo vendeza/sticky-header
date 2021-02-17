@@ -1,11 +1,5 @@
-
 import React from "react";
-import {
-
-    View,
-    Text,
-} from "react-native";
-
+import { View, Text } from "react-native";
 
 import ContainerView from "./src/ContainerView";
 
@@ -35,14 +29,12 @@ const App: () => React$Node = () => {
             screenTitle={"Test sticky header"}
             containerColor={"white"}
             isBackButton={true}
-            // navigation={this.props.navigation}
         >
-            {[1, 2, 3, 4, 5,6,7].map((item) => {
+            {[1, 2, 3, 4, 5, 6, 7].map((item) => {
                 return content(item);
             })}
         </ContainerView>
     );
 };
-
 
 export default App;

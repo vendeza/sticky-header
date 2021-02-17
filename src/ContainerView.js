@@ -213,7 +213,6 @@ export default class ContainerView extends React.Component {
                 parallaxHeight={76} //scrollable header
                 headerHeight={88}
                 snapToEdge={false}
-                //   bounces={false}
                 headerSize={() => {}}
                 scrollEvent={Animated.event(
                     [
@@ -246,14 +245,11 @@ export default class ContainerView extends React.Component {
                 <StatusBar
                     translucent
                     backgroundColor="transparent"
-                    //  showHideTransition
                     barStyle="dark-content"
-                    // backgroundColor={this.props.containerColor}
                 />
                 <View
                     style={{
                         ...styles.container,
-                        // backgroundColor: this.props.containerColor,
                         paddingTop: Platform.OS === "android" ? 44 : 0,
                     }}
                 >
