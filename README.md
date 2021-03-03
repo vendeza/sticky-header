@@ -9,7 +9,7 @@ You can use that component as for a sticky part of your project and as not stick
 
 
 
-![Tabbed Header Gif](./assets/present.webp)
+![Tabbed Header Gif](./assets/presentation1.webp)
 
 
 Use the ContainerView like a wrapper:
