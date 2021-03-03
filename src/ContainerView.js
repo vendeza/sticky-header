@@ -12,6 +12,7 @@ import {
     Platform,
     TouchableOpacity,
 } from "react-native";
+
 import commonStyles from "./styles/commonStyles";
 import colors from "./styles/colors";
 import StickyParallaxHeader from "./stickyParallaxHeader/StickyParallaxHeader";
@@ -47,7 +48,7 @@ export default class ContainerView extends React.Component {
         }
     }
 
-    /** used for sticky header component*/
+    /** used for sticky header component (before scrolling) */
     renderForeground() {
         const { scroll } = this.state;
         const titleOpacity = scroll.interpolate({
@@ -60,8 +61,7 @@ export default class ContainerView extends React.Component {
             <Animated.View
                 style={{ ...styles.foreground, opacity: titleOpacity }}
             >
-                <View>
-                    {this.renderBackButton()}
+                <View style={{ paddingTop: 64 }}>
                     <Text style={styles.h1}>
                         {this.truncateWithEllipses(this.props.screenTitle, 40)}
                     </Text>
@@ -81,34 +81,58 @@ export default class ContainerView extends React.Component {
             outputRange: [0, 0, 1],
             extrapolate: "clamp",
         });
-
+        console.log(scroll);
         return (
-            <Animated.View style={{ opacity }}>
+            <View>
                 <View
                     style={{
-                        ...styles.headerWrapper,
-                        backgroundColor: this.props.containerColor,
                         flexDirection: "row",
-                        justifyContent: "flex-start",
+                        paddingLeft: 10,
+                        backgroundColor: this.props.headerColor,
+
                         alignItems: "center",
+                        paddingBottom: 10,
                     }}
                 >
                     <View>{this.renderBackButton()}</View>
 
-                    <Text
-                        style={{
-                            ...styles.headerTitle,
-                            flex: 1,
-                            marginLeft: this.props.isBackButton ? 30 : 0,
-                            textAlign: this.props.isBackButton
-                                ? "left"
-                                : "center",
-                        }}
-                    >
-                        {this.truncateWithEllipses(this.props.screenTitle, 30)}
-                    </Text>
+                    <Animated.View style={{ opacity }}>
+                        <View
+                            style={{
+                                ...styles.headerWrapper,
+                                backgroundColor: this.props.headerColor,
+                                flexDirection: "row",
+                                justifyContent: "flex-start",
+                                alignItems: "center",
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    ...styles.headerTitle,
+                                    marginLeft: this.props.isBackButton
+                                        ? 30
+                                        : 0,
+                                    textAlign: this.props.isBackButton
+                                        ? "left"
+                                        : "center",
+                                }}
+                            >
+                                {this.truncateWithEllipses(
+                                    this.props.screenTitle,
+                                    30,
+                                )}
+                            </Text>
+                        </View>
+                    </Animated.View>
                 </View>
-            </Animated.View>
+                <Animated.View
+                    style={{
+                        opacity,
+                        borderBottomWidth: 1,
+                        borderBottomColor: colors.softGray,
+                    }}
+                />
+            </View>
         );
     }
 
@@ -126,7 +150,6 @@ export default class ContainerView extends React.Component {
                         }
                     }}
                     style={{
-                        marginTop: Platform.OS === "android" ? 0 : 0,
                         zIndex: 1000,
                         width: 90,
                         paddingHorizontal: 0,
@@ -183,13 +206,12 @@ export default class ContainerView extends React.Component {
         );
     }
 
-    /** render lists, images, texts and etc. (content)*/
+    /** rendering lists, images, texts and etc. (content)*/
     renderStickyContent() {
         if (this.props.pending && !this.props.refreshing) {
             return (
                 <View
                     style={{
-                        //  opacity: this.state.fadeAnimation,
                         justifyContent: "center",
                         alignItems: "center",
                         flex: 1,
@@ -210,8 +232,8 @@ export default class ContainerView extends React.Component {
                 }
                 foreground={this.renderForeground()}
                 header={this.renderHeader()}
-                parallaxHeight={76} //scrollable header
-                headerHeight={88}
+                parallaxHeight={98} //scrollable header
+                headerHeight={100}
                 snapToEdge={false}
                 headerSize={() => {}}
                 scrollEvent={Animated.event(
@@ -237,9 +259,7 @@ export default class ContainerView extends React.Component {
             <SafeAreaView
                 style={{
                     ...commonStyles.mainContainer,
-                    backgroundColor: this.props.containerColor
-                        ? this.props.containerColor
-                        : colors.backgroundColor,
+                    backgroundColor: this.props.backgroundColor,
                 }}
             >
                 <StatusBar
@@ -250,6 +270,7 @@ export default class ContainerView extends React.Component {
                 <View
                     style={{
                         ...styles.container,
+                        backgroundColor: this.props.containerColor,
                         paddingTop: Platform.OS === "android" ? 44 : 0,
                     }}
                 >
@@ -269,6 +290,7 @@ ContainerView.defaultProps = {
     refreshing: false,
     pending: false,
     containerColor: colors.backgroundColor,
+    headerColor: "white",
     isSticky: true,
     isBackButton: false,
     navigation: {
@@ -283,6 +305,7 @@ ContainerView.propTypes = {
     refreshing: PropTypes.bool,
     pending: PropTypes.bool,
     containerColor: PropTypes.string,
+    headerColor: PropTypes.string,
     isSticky: PropTypes.bool,
     isBackButton: PropTypes.bool,
     navigation: PropTypes.object,
@@ -306,10 +329,8 @@ const styles = StyleSheet.create({
         backgroundColor: colors.backgroundColor,
         width: "100%",
         paddingHorizontal: 16,
-        paddingTop: 0,
-        paddingBottom: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: colors.softGray,
+        marginTop: 4,
+        paddingBottom: 0,
     },
     headerTitle: {
         fontSize: 16,
