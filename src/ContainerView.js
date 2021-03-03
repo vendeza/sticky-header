@@ -35,7 +35,7 @@ export default class ContainerView extends React.Component {
     }
 
     componentWillUnmount() {
-        /** Удаляем Listener  */
+        /** Removing the Listener  */
         const { scroll } = this.state;
         scroll.removeAllListeners();
     }
@@ -285,7 +285,7 @@ ContainerView.propTypes = {
     containerColor: PropTypes.string,
     isSticky: PropTypes.bool,
     isBackButton: PropTypes.bool,
-    navigation: PropTypes.function,
+    navigation: PropTypes.object,
 };
 const styles = StyleSheet.create({
     container: {

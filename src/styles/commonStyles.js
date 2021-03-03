@@ -1,17 +1,16 @@
 import { Platform, StyleSheet } from "react-native";
-import PX from "./pixelPerfectProvider";
 import colors from "./colors";
 
 const blockStyles = {
     backgroundColor: colors.lightBlue,
-    borderRadius: PX(14),
+    borderRadius: 14,
     marginBottom: 16,
 };
 
 const iconContainer = {
     width: 32,
     height: 32,
-    borderRadius: PX(60),
+    borderRadius: 60,
     alignItems: "center",
     justifyContent: "center",
 };
@@ -26,7 +25,7 @@ const commonStyles = StyleSheet.create({
     },
     h1: {
         fontSize: 28, // 3 * designSize
-        lineHeight: PX(28),
+        lineHeight: 28,
         fontWeight: "700",
         color: colors.black,
     },
@@ -40,13 +39,13 @@ const commonStyles = StyleSheet.create({
     },
     subTitle: {
         fontSize: 15, // 3 * designSize
-        lineHeight: PX(22),
+        lineHeight: 22,
         fontWeight: "400",
         color: colors.lightGray,
     },
     h4: {
-        fontSize: PX(12), // 3 * designSize
-        lineHeight: PX(18),
+        fontSize: 12, // 3 * designSize
+        lineHeight: 18,
         fontWeight: "400",
         color: colors.lightGray,
     },
@@ -55,28 +54,28 @@ const commonStyles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: "#E5E5EA",
         color: colors.blue,
-        paddingTop: PX(10),
-        paddingBottom: PX(10),
+        paddingTop: 10,
+        paddingBottom: 10,
         flexDirection: "row",
         alignItems: "center",
     },
     bubleCount: {
-        borderRadius: PX(12),
+        borderRadius: 12,
         backgroundColor: "#C8C7CC",
-        padding: PX(6),
-        paddingLeft: PX(20),
-        paddingRight: PX(20),
-        marginRight: PX(10),
+        padding: 6,
+        paddingLeft: 20,
+        paddingRight: 20,
+        marginRight: 10,
     },
     textListElement: {
         color: colors.blue,
         fontWeight: "400",
-        fontSize: PX(17),
+        fontSize: 17,
     },
     textBubleListElement: {
         color: "white",
         fontWeight: "700",
-        fontSize: PX(14),
+        fontSize: 14,
     },
     boldRedText: {
         fontSize: 20, // 3 * designSize

@@ -1,5 +1,4 @@
 import { Platform, StyleSheet } from "react-native";
-import PX from "./pixelPerfectProvider";
 import colors from "./colors";
 
 const trace = false;
@@ -12,8 +11,6 @@ const headerStyles = StyleSheet.create({
         width: "100%",
         borderBottomWidth: 0,
         backgroundColor: trace ? "green" : colors.lightBlue,
-        //paddingTop: Platform.OS == "ios" ? PX(0) : 0,
-
         paddingRight: 0,
     },
     headersubTitleText: {
@@ -26,7 +23,6 @@ const headerStyles = StyleSheet.create({
         fontSize: 28,
         fontWeight: "700",
         textAlign: "left",
-        // width: "100%",
     },
     headerStyle: {
         shadowColor: "transparent",
@@ -46,7 +42,7 @@ const headerStyles = StyleSheet.create({
         flexDirection: "row",
         backgroundColor: trace ? "blue" : colors.lightBlue,
         fontWeight: "bold",
-        fontSize: PX(24),
+        fontSize: 24,
         color: "black",
         borderBottomWidth: 0,
     },
