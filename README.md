@@ -1,8 +1,8 @@
-#Sticky header
+# Sticky header
 
 This is the changed version of component: https://github.com/netguru/sticky-parallax-header
  
- ###About
+ ### About
  
 This is the short version of `sticky-parallax-header` library. It's special for providing features of sticky header only.
 You can use that component as for a sticky part of your project and as not sticky
