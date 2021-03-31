@@ -59,8 +59,7 @@ export default class ContainerView extends React.Component {
 
         return (
             <Animated.View
-                style={{ ...styles.foreground, opacity: titleOpacity }}
-            >
+                style={{ ...styles.foreground, opacity: titleOpacity }}>
                 <View style={{ paddingTop: 64 }}>
                     <Text style={styles.h1}>
                         {this.truncateWithEllipses(this.props.screenTitle, 40)}
@@ -92,8 +91,7 @@ export default class ContainerView extends React.Component {
 
                         alignItems: "center",
                         paddingBottom: 10,
-                    }}
-                >
+                    }}>
                     <View>{this.renderBackButton()}</View>
 
                     <Animated.View style={{ opacity }}>
@@ -104,8 +102,7 @@ export default class ContainerView extends React.Component {
                                 flexDirection: "row",
                                 justifyContent: "flex-start",
                                 alignItems: "center",
-                            }}
-                        >
+                            }}>
                             <Text
                                 style={{
                                     ...styles.headerTitle,
@@ -115,8 +112,7 @@ export default class ContainerView extends React.Component {
                                     textAlign: this.props.isBackButton
                                         ? "left"
                                         : "center",
-                                }}
-                            >
+                                }}>
                                 {this.truncateWithEllipses(
                                     this.props.screenTitle,
                                     30,
@@ -155,8 +151,7 @@ export default class ContainerView extends React.Component {
                         paddingHorizontal: 0,
                         marginHorizontal: 0,
                         marginLeft: -12,
-                    }}
-                >
+                    }}>
                     <View
                         style={{
                             flexDirection: "row",
@@ -164,8 +159,7 @@ export default class ContainerView extends React.Component {
                             justifyContent: "center",
                             paddingHorizontal: 0,
                             marginHorizontal: 0,
-                        }}
-                    >
+                        }}>
                         <Icon
                             style={{
                                 marginLeft: -8,
@@ -181,8 +175,7 @@ export default class ContainerView extends React.Component {
                                 fontWeight: "400",
                                 textAlign: "left",
                                 fontSize: 17,
-                            }}
-                        >
+                            }}>
                             {"Назад"}
                         </Text>
                     </View>
@@ -215,8 +208,7 @@ export default class ContainerView extends React.Component {
                         justifyContent: "center",
                         alignItems: "center",
                         flex: 1,
-                    }}
-                >
+                    }}>
                     <ActivityIndicator size="large" color="#555" />
                 </View>
             );
@@ -247,8 +239,7 @@ export default class ContainerView extends React.Component {
                         },
                     ],
                     { useNativeDriver: false },
-                )}
-            >
+                )}>
                 {this.props.children}
             </StickyParallaxHeader>
         );
@@ -260,8 +251,7 @@ export default class ContainerView extends React.Component {
                 style={{
                     ...commonStyles.mainContainer,
                     backgroundColor: this.props.backgroundColor,
-                }}
-            >
+                }}>
                 <StatusBar
                     translucent
                     backgroundColor="transparent"
@@ -272,8 +262,7 @@ export default class ContainerView extends React.Component {
                         ...styles.container,
                         backgroundColor: this.props.containerColor,
                         paddingTop: Platform.OS === "android" ? 44 : 0,
-                    }}
-                >
+                    }}>
                     {this.props.isSticky
                         ? this.renderStickyContent()
                         : this.renderNotStickyContent()}

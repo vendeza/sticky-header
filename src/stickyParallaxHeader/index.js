@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import StickyParallaxHeader from './StickyParallaxHeader';
+import StickyParallaxHeader from "./StickyParallaxHeader";
 
 const index = (props) => {
-  return <StickyParallaxHeader {...props} />;
+    return <StickyParallaxHeader {...props} />;
 };
 
 export default index;

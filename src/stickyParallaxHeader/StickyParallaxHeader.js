@@ -265,8 +265,7 @@ class StickyParallaxHeader extends Component {
                             : backgroundColor || headerStyle?.backgroundColor,
                         ...(transparentHeader && styles.transparentHeader),
                     })
-                }
-            >
+                }>
                 {header}
             </View>
         );
@@ -287,8 +286,7 @@ class StickyParallaxHeader extends Component {
                         height: backgroundHeight,
                     },
                 ]}
-                source={backgroundImage}
-            >
+                source={backgroundImage}>
                 {background}
             </AnimatedImageBackground>
         );
@@ -304,8 +302,7 @@ class StickyParallaxHeader extends Component {
                     {
                         height: backgroundHeight,
                     },
-                ]}
-            >
+                ]}>
                 {background}
             </View>
         );
@@ -323,8 +320,7 @@ class StickyParallaxHeader extends Component {
                 style={{
                     height: backgroundHeight,
                     ...(backgroundImage && styles.transparentBackground),
-                }}
-            >
+                }}>
                 {foreground}
             </View>
         );
@@ -411,12 +407,10 @@ class StickyParallaxHeader extends Component {
                                 scrollEvent(e);
                             },
                         },
-                    )}
-                >
+                    )}>
                     <View
                         style={{ height: parallaxHeight }}
-                        onLayout={(e) => this.onLayout(e)}
-                    >
+                        onLayout={(e) => this.onLayout(e)}>
                         <View
                             style={[
                                 styles.overScrollPadding,
@@ -445,8 +439,7 @@ class StickyParallaxHeader extends Component {
                         isHeaderFolded={isFolded}
                         minScrollHeight={innerScrollHeight}
                         scrollEnabled={!hasSingleElement}
-                        keyboardShouldPersistTaps={keyboardShouldPersistTaps}
-                    >
+                        keyboardShouldPersistTaps={keyboardShouldPersistTaps}>
                         {children}
                     </View>
                 </AnimatedScrollView>
