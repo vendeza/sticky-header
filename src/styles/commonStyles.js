@@ -55,42 +55,13 @@ const commonStyles = StyleSheet.create({
         borderBottomColor: "#E5E5EA",
         color: colors.blue,
         paddingTop: 10,
-        paddingBottom: 10,
         flexDirection: "row",
         alignItems: "center",
     },
-    bubleCount: {
-        borderRadius: 12,
-        backgroundColor: "#C8C7CC",
-        padding: 6,
-        paddingLeft: 20,
-        paddingRight: 20,
-        marginRight: 10,
-    },
-    textListElement: {
-        color: colors.blue,
-        fontWeight: "400",
-        fontSize: 17,
-    },
-    textBubleListElement: {
-        color: "white",
-        fontWeight: "700",
-        fontSize: 14,
-    },
-    boldRedText: {
-        fontSize: 20, // 3 * designSize
-        lineHeight: 24,
-        fontWeight: "700",
-        color: colors.red,
-        textAlign: "right",
-    },
-    container: {
-        backgroundColor: colors.lightBlue,
-        flex: 1,
-        flexDirection: "column",
-        marginTop: 0,
 
-        // paddingTop: 30,
+    container: {
+        flex: 1,
+
     },
 
     title: {
@@ -102,26 +73,6 @@ const commonStyles = StyleSheet.create({
     breakRow: {
         height: 0,
         flexBasis: "100%",
-    },
-
-    iconContainer: {
-        ...iconContainer,
-    },
-    arrivalIconContainer: {
-        ...iconContainer,
-        backgroundColor: colors.blue,
-    },
-    exitsIconContainer: {
-        ...iconContainer,
-        backgroundColor: colors.stoutRed,
-    },
-    resideIconContainer: {
-        ...iconContainer,
-        backgroundColor: colors.orange,
-    },
-    freeIconContainer: {
-        ...iconContainer,
-        backgroundColor: colors.green,
     },
 });
 

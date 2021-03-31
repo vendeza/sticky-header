@@ -15,6 +15,6 @@ const colors = {
     yellow: "#FFCC00",
     skyBlue: "#5AC8FA",
     blue: "#007AFF",
-    backgroundColor: "#F3F2F7",
+    backgroundColor: "#bebebe",
 };
 export default colors;

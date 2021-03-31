@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image,SafeAreaView } from "react-native";
 import ContainerView from "./src/ContainerView";
 
 const content = (item, index) => {
@@ -19,8 +19,7 @@ const content = (item, index) => {
                     shadowRadius: 18,
                     shadowOpacity: 0.4,
                     borderRadius: 8,
-                }}
-            >
+                }}>
                 <Image
                     style={{
                         height: undefined,
@@ -40,8 +39,7 @@ const content = (item, index) => {
                         fontSize: 16,
                         fontWeight: "500",
                         marginTop: 16,
-                    }}
-                >
+                    }}>
                     {"Just content "}
                 </Text>
             </View>
@@ -63,18 +61,21 @@ const App: () => React$Node = () => {
         { img: require("./assets/Colors.png") },
     ];
     return (
-        <ContainerView
-            screenTitle={"Test sticky header"}
-            containerColor={"#f7f9fd"}
-            headerColor={color}
-            isBackButton={true}
-        >
-            <View style={{ padding: 10, paddingTop: 0 }}>
-                {elements.map((item, index) => {
-                    return content(item, index);
-                })}
-            </View>
-        </ContainerView>
+        <SafeAreaView
+            style={{ flex: 1 }}
+            forceInset={{ top: "always", bottom: "always" }}>
+            <ContainerView
+                screenTitle={"Test sticky header"}
+                containerColor={"#f7f9fd"}
+                headerColor={color}
+                isBackButton={true}>
+                <View style={{ padding: 10, paddingTop: 0 }}>
+                    {elements.map((item, index) => {
+                        return content(item, index);
+                    })}
+                </View>
+            </ContainerView>
+        </SafeAreaView>
     );
 };
 

@@ -80,7 +80,6 @@ export default class ContainerView extends React.Component {
             outputRange: [0, 0, 1],
             extrapolate: "clamp",
         });
-        console.log(scroll);
         return (
             <View>
                 <View
@@ -88,7 +87,6 @@ export default class ContainerView extends React.Component {
                         flexDirection: "row",
                         paddingLeft: 10,
                         backgroundColor: this.props.headerColor,
-
                         alignItems: "center",
                         paddingBottom: 10,
                     }}>
@@ -215,7 +213,7 @@ export default class ContainerView extends React.Component {
         }
         return (
             <StickyParallaxHeader
-                transparentHeader // the reason not opacity
+                transparentHeader
                 refreshControl={
                     <RefreshControl
                         refreshing={this.props.refreshing}
@@ -247,27 +245,29 @@ export default class ContainerView extends React.Component {
 
     render() {
         return (
-            <SafeAreaView
-                style={{
-                    ...commonStyles.mainContainer,
-                    backgroundColor: this.props.backgroundColor,
-                }}>
+            <>
                 <StatusBar
                     translucent
                     backgroundColor="transparent"
                     barStyle="dark-content"
                 />
-                <View
+                <SafeAreaView
                     style={{
-                        ...styles.container,
+                        ...commonStyles.mainContainer,
                         backgroundColor: this.props.containerColor,
-                        paddingTop: Platform.OS === "android" ? 44 : 0,
                     }}>
-                    {this.props.isSticky
-                        ? this.renderStickyContent()
-                        : this.renderNotStickyContent()}
-                </View>
-            </SafeAreaView>
+
+                    <View
+                        style={{
+                            ...styles.container,
+                            paddingTop: Platform.OS === "android" ? 44 : 0,
+                        }}>
+                        {this.props.isSticky
+                            ? this.renderStickyContent()
+                            : this.renderNotStickyContent()}
+                    </View>
+                </SafeAreaView>
+            </>
         );
     }
 }
